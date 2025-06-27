@@ -4,17 +4,27 @@
 
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { resolve } from 'path';
+import { createHtmlPlugin } from 'vite-plugin-html';
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, './src')
-    }
-  },
-  css: {
-    postcss: {
-      plugins: [require('tailwindcss'), require('autoprefixer')]
-    }
+  plugins: [
+    react(),
+    createHtmlPlugin({
+      minify: true,
+      inject: {
+        injectTo: 'head',
+        tags: [{
+          tag: 'link',
+          attrs: {
+            rel: 'stylesheet',
+            href: 'https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css'
+          }
+        }]
+      }
+    })
+  ],
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false
   }
 });

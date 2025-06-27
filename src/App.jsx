@@ -6,9 +6,7 @@ import React from 'react';
 import './App.css';
 function App() {
   return (
-    <div className='app-container'>
-      Welcome to WorldClock Dashboard
-    </div>
+    <div className='bg-blue-500 text-white text-xl p-4'>Welcome to WorldClock Dashboard</div>
   );
 }
 export default App;
