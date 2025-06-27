@@ -1,8 +1,1 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from '../src/App';
-
-test('Tailwind CSS applies styles correctly', () => {
-  const { container } = render(<App />);
-  expect(container.firstChild).toHaveClass('text-xl font-bold');
-});
+import { render } from '@testing-library/react'; import App from '../src/App'; describe('Tailwind CSS integration', () => { test('Tailwind CSS styles are applied correctly', () => { const { container } = render(<App />); expect(container.firstChild).toHaveClass('bg-blue-500 text-white'); }); });
