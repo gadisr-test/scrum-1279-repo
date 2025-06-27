@@ -1,6 +1,8 @@
+import React from 'react';
 import { render } from '@testing-library/react';
 import App from '../src/App';
-test('applies Tailwind CSS styles correctly', () => {
+
+test('Tailwind CSS applies styles correctly', () => {
   const { container } = render(<App />);
-  expect(container.firstChild).toHaveClass('tailwind-class-name');
+  expect(container.firstChild).toHaveClass('text-xl font-bold');
 });
