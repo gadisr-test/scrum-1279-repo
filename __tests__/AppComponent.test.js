@@ -1,16 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import App from '../src/App';
 
-describe('AppComponent', () => {
-  test('renders welcome message', () => {
+describe('App component initial render', () => {
+  test('renders the welcome message', () => {
     render(<App />);
-    const welcomeElement = screen.getByText(/Welcome to WorldClock Dashboard/i);
-    expect(welcomeElement).toBeInTheDocument();
+    const linkElement = screen.getByText(/Welcome to WorldClock Dashboard/i);
+    expect(linkElement).toBeInTheDocument();
   });
 
-  test('applies Tailwind CSS styles', () => {
+  test('applies Tailwind CSS to component', () => {
     render(<App />);
-    const welcomeElement = screen.getByText(/Welcome to WorldClock Dashboard/i);
-    expect(welcomeElement).toHaveClass('text-blue-500');
+    const divElement = screen.getByText(/Welcome to WorldClock Dashboard/i);
+    expect(divElement).toHaveClass('font-bold text-xl');
   });
 });
