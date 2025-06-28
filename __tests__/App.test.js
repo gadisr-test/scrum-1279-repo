@@ -1,16 +1,16 @@
+import React from 'react';
 import { render } from '@testing-library/react';
 import App from '../src/App';
 
-describe('App Component Rendering', () => {
-  test('renders without crashing', () => {
+describe('App Component Initialization', () => {
+  test('renders Welcome message', () => {
     const { getByText } = render(<App />);
     expect(getByText('Welcome to WorldClock Dashboard')).toBeInTheDocument();
   });
-});
 
-describe('Tailwind CSS Integration', () => {
-  test('applies tailwind CSS styles', () => {
-    const { container } = render(<div className='bg-blue-500'>Test Element</div>);
-    expect(container.firstChild).toHaveClass('bg-blue-500');
+  test('applies Tailwind CSS correctly', () => {
+    const { getByTestId } = render(<div data-testid="test-div" className="bg-blue-500" />);
+    const divElement = getByTestId('test-div');
+    expect(divElement).toHaveClass('bg-blue-500');
   });
 });
