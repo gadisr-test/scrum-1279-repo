@@ -1,0 +1,7 @@
+// src/index.css
+//
+// Scope: Create an 'index.css' file to include global styles and import Tailwind CSS directives. This file will be imported into 'index.jsx' to ensure that Tailwind styles are available throughout the application.
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -4,5 +4,5 @@ import App from '../src/App';
 
 test('applies Tailwind CSS styles correctly', () => {
   const { container } = render(<App />);
-  expect(container.firstChild).toHaveClass('tailwind-class');
+  expect(container.firstChild).toHaveClass('font-bold text-xl text-center');
 });
