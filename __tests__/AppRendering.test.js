@@ -1,10 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from '../src/App';
 
-describe('App Component Rendering', () => {
-  test('renders Welcome message', () => {
+describe('App Component Rendering Test', () => {
+  test('renders Welcome to WorldClock Dashboard', () => {
     render(<App />);
-    const linkElement = screen.getByText(/Welcome to WorldClock Dashboard/i);
-    expect(linkElement).toBeInTheDocument();
+    expect(screen.getByText('Welcome to WorldClock Dashboard')).toBeInTheDocument();
   });
 });
