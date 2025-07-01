@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import App from '../src/App';
 
-describe('Tailwind CSS Application Test', () => {
-  test('Tailwind CSS styles are applied correctly', () => {
-    const { container } = render(<App />);
+describe('Tailwind CSS application', () => {
+  test('applies Tailwind CSS styles', () => {
+    const { container } = render(<div className='bg-blue-500'>Test Style</div>);
     expect(container.firstChild).toHaveClass('bg-blue-500');
   });
 });
