@@ -1,16 +1,15 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from '../src/App';
 
-describe('App component tests', () => {
-  test('renders Welcome to WorldClock Dashboard', () => {
-    render(<App />);
-    const linkElement = screen.getByText(/Welcome to WorldClock Dashboard/i);
-    expect(linkElement).toBeInTheDocument();
+describe('App Component Rendering', () => {
+  test('renders welcome message', () => {
+    const { getByText } = render(<App />);
+    expect(getByText('Welcome to WorldClock Dashboard')).toBeInTheDocument();
   });
 
-  test('Tailwind CSS class application', () => {
-    render(<div className='bg-blue-500'>Test Tailwind</div>);
-    const divElement = screen.getByText('Test Tailwind');
-    expect(divElement).toHaveClass('bg-blue-500');
+  test('applies Tailwind CSS styles', () => {
+    const { getByTestId } = render(<div data-testid='styled-div' className='bg-blue-500'></div>);
+    const styledDiv = getByTestId('styled-div');
+    expect(styledDiv).toHaveClass('bg-blue-500');
   });
 });
