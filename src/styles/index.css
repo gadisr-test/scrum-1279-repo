@@ -2,13 +2,6 @@
 //
 // Scope: Create a CSS file that imports Tailwind CSS styles using the '@tailwind' directives for base, components, and utilities. This setup allows the use of Tailwind classes throughout the React application and ensures that styles are correctly applied, facilitating the application's overall styling.
 
-import React from 'react';
-import './styles/index.css';
-function App() {
-  return (
-    <div className='p-4 shadow-lg rounded-lg text-center text-white bg-blue-500'>
-      Welcome to WorldClock Dashboard
-    </div>
-  );
-}
-export default App;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
