@@ -1,0 +1,1 @@
+const request = require('supertest'); const app = require('../../app'); describe('Timezone CRUD Operations', () => { it('should handle POST request for adding time zone', async () => { const res = await request(app).post('/timezones').send({timezone_id: 'tz1'}); expect(res.statusCode).toEqual(200); expect(res.body).toEqual({message: 'Timezone added'}); }); });

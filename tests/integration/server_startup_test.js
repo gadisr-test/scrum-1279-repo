@@ -1,0 +1,1 @@
+const request = require('supertest'); const app = require('../../app'); describe('Server Startup', () => { it('should start without errors', async () => { const res = await request(app).get('/'); expect(res.statusCode).toEqual(200); }); });
